@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Coronavirus Tracker Application</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<h1>Recorded Coronavirus Cases</h1>
+	<p>This application lists the current number of cases reported
+		across the globe.</p>
+	<div class="jumbotron">
+		<h1 class="display-4" th:text="${totalCases}"></h1>
+		<p class="lead">Total cases reported until today</p>
+	</div>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>State</th>
+				<th>Country</th>
+				<th>Total Cases Reported</th>
+				<th>Previous Day's Cases</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="data: ${datas}">
+				<td th:text="${data.getState}"></td>
+				<td th:text="${data.getCountry}"></td>
+				<td th:text="${data.getLatestCases}"></td>
+				<td th:text="${data.getDiffFromPrevDay}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
