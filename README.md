@@ -1,4 +1,4 @@
-## Coronavirus Tracker App
+# Coronavirus Tracker App
 
 This app lists the reported coronavirus cases across globe. Data updates everyday at 23.59. Because of that this app updates the request data everyday at 1 AM. 
 
